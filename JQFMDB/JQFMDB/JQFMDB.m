@@ -559,7 +559,7 @@ static JQFMDB *jqdb = nil;
 
 - (BOOL)jq_alterTable:(NSString *)tableName dicOrModel:(id)parameters excludeName:(NSArray *)nameArr
 {
-    __block BOOL flag;
+    __block BOOL flag = YES;
     [self jq_inTransaction:^(BOOL *rollback) {
         if ([parameters isKindOfClass:[NSDictionary class]]) {
             for (NSString *key in parameters) {
